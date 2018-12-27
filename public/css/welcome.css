@@ -1,0 +1,10 @@
+.firstBtns{
+    transition: opacity 2s;
+}
+
+#loginForm{
+    transition: opacity 2s;
+}
+#signUpForm{
+    transition: opacity 2s;
+}
