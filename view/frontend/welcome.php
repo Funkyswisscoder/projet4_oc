@@ -9,28 +9,30 @@
     <title>Welcome</title>
 </head>
 <body>
-    <form action="">
+    <form>
         <input type="button" name="loginBtn" value="J'ai un compte!" id="loginBtn" class="firstBtns">
     </form>
-    <form action="">
+    <form>
         <input type="button" name="signUpBtn" value="Je m'inscris!" id="signUpBtn" class="firstBtns">
     </form>
     
-    <form action="./controller/listPostsCtrl.php" method="post" id="loginForm" class="display_none">
+    <form action="./controller/loginCtrl.php" method="post" id="loginForm" class="display_none">
         Pseudo: <br/>
         <input type="text" name="pseudo" value="pseudo" required> <br/>
         Mot de passe: <br/>
-        <input type="password" name="password" required> <br/>
+        <input type="password" name="userPwd" required> <br/>
         <input type="submit" value="Valider">
     </form>
 
-    <form action="./controller/listPostsCtrl.php" method="post" id="signUpForm" class="display_none">
+    <form action="./controller/signUpCtrl.php" method="post" id="signUpForm" class="display_none">
         Pseudo: <br/>
         <input type="text" name="pseudo" value="pseudo" required> <br/>
         Mot de passe: <br/>
         <input type="password" name="password" required> <br/>
         Confirmer Mot de Passe: <br/>
-        <input type="password" name="passwordcheck" required> <br/>
+        <input type="password" name="passwordCheck" required> <br/>
+        Votre adresse e-mail: <br/>
+        <input type="text" name="email" required>
         <input type="submit" value="Valider">
     </form>
     <script type="text/javascript" src="./public/js/welcome.js"></script>
