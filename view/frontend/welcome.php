@@ -16,7 +16,7 @@
         <input type="button" name="signUpBtn" value="Je m'inscris!" id="signUpBtn" class="firstBtns">
     </form>
     
-    <form action="./controller/loginCtrl.php" method="post" id="loginForm" class="display_none">
+    <form action="./index.php?redirect=loginCtrl" method="post" id="loginForm" class="display_none">
         Pseudo: <br/>
         <input type="text" name="pseudo" value="pseudo" required> <br/>
         Mot de passe: <br/>
@@ -24,7 +24,7 @@
         <input type="submit" value="Valider">
     </form>
 
-    <form action="./controller/signUpCtrl.php" method="post" id="signUpForm" class="display_none">
+    <form action="./index.php?redirect=signUpCtrl" method="post" id="signUpForm" class="display_none">
         Pseudo: <br/>
         <input type="text" name="pseudo" value="pseudo" required> <br/>
         Mot de passe: <br/>

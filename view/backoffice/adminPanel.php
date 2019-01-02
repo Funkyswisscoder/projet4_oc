@@ -1,5 +1,3 @@
-<?= require('../../controller/adminPanelCtrl.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Liste des membres:</h2> <br/>
     <?php
         while($datas = mysqli_fetch_assoc($allUsers)){
+            $userId = $datas['id'];
             echo "<h3>" . $datas['pseudo'] . "<h/3>";
+            echo "<form action='index.php?action=deleteUser&userId=$userId' method='post'> <input type='submit' value='Supprimer l'utilisateur'> </form>";
         }
     ?>
 </body>

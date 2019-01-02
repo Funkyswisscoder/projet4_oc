@@ -1,6 +1,6 @@
 <?php
 
-    require('../model/userModel.php');
+    require('./model/userModel.php');
 
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $email = htmlspecialchars($_POST['email']);
@@ -20,7 +20,7 @@
                 $addUser = new User();
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 $addUser->signUp($pseudo,$email,$password);
-                require('../controller/listPostsCtrl.php');
+                require('./controller/listPostsCtrl.php');
             }
         }
     }

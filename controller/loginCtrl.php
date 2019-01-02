@@ -9,13 +9,13 @@
         while($datas = mysqli_fetch_assoc($password_in_db_hashed)){
             if($pseudo == 'admin'){
                 if(password_verify($userPwd,$datas['password'])){
-                    require('./adminViewCtrl.php'); 
+                    require('./controller/admin/adminViewCtrl.php'); 
                 }else{
                     echo "<h1>You aren't my admin! </h1>";
                 }
             }else{
                 if(password_verify($userPwd,$datas['password'])){
-                    require('./listPostsCtrl.php');
+                    require('./controller/listPostsCtrl.php');
                 } else{
                     echo "<h1> Wrong Username or Password</h1>";
                 }

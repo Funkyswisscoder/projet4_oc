@@ -8,5 +8,20 @@
 </head>
 <body>
     <h1>Admin View</h1>
+    <?php
+        while($datas = $posts->fetch()){
+            $id_post= $datas['id'];
+            $content = $datas['content'];
+            $content_title = $datas['title'];
+
+            $title = "<div> <h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3> </div>";
+            $paragraph = "<div class='news'> <p>" . $content. "<br> <a href='index.php?redirect=".$id_post."'>Commentaires</a> </p> </div>";
+            $supprimer = "<a href='./index.php?redirectDelete=".$id_post."'>Supprimer</a>";
+            
+            echo $title;
+            echo $paragraph;
+            echo $supprimer;
+        }
+    ?>
 </body>
 </html>
