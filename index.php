@@ -1,5 +1,6 @@
 <?php
 
+
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }else{
@@ -11,7 +12,7 @@
         $id_post = htmlspecialchars($_GET['redirect']);   
     }
 
-
+    $action = false;
 
     if(isset($_GET['redirect']) AND htmlspecialchars($_GET['redirect'])){
         switch($_GET['redirect']){
@@ -21,22 +22,44 @@
             case "signUpCtrl";
                 require('controller/signUpCtrl.php');
             break;
-            case "adminView";
-                require('admin/adminViewCtrl.php');
-            break;
             case "listPosts";
                 require('controller/listPostsCtrl.php');
             break;
             case "$id_post";
                 require('controller/postViewCtrl.php');
             break;
+            case "updatePost";
+                require('controller/admin/adminUpdatePost.php');
+            break;
             default:
                 require('controller/welcomeCtrl.php');
         }
     }else if(isset($_GET['redirectDelete']) AND htmlspecialchars($_GET['redirectDelete'])){
         $id_post = $_GET['redirectDelete'];
-        require('controller/admin/adminDeletePost.php');
-    }else{
+        $action = 'delete';
+        require('controller/admin/adminViewCtrl.php');
+    }else if(isset($_GET['redirectUpdate']) AND htmlspecialchars($_GET['redirectUpdate'])){
+        $action = 'update';
+        $id_post = htmlspecialchars($_GET['redirectUpdate']);
+        $updateTitle= htmlspecialchars($_GET['updateTitle']);
+        $updateContent = htmlspecialchars($_GET['updateContent']);
+        require('controller/admin/adminViewCtrl.php');
+    }else if(isset($_GET['executeUpdate']) AND htmlspecialchars($_GET['executeUpdate'])){
+        $action = 'executeUpdate';
+        $id_post = htmlspecialchars($_GET['id_post']);
+        $updateTitle= htmlspecialchars($_POST['titleUpdated']);
+        $updateContent = htmlspecialchars($_POST['contentUpdated']);
+        require('controller/admin/adminViewCtrl.php');
+    }else if(isset($_GET['redirectCreate']) AND htmlspecialchars($_GET['redirectCreate'])){
+        $action = 'create';
+        require('./view/backoffice/adminCreateFrom.php');
+    }else if(isset($_GET['executeCreate']) AND htmlspecialchars($_GET['executeCreate'])){
+        $action = 'executeCreate';
+        $createdTitle = htmlspecialchars($_POST['createTitle']);
+        $createdContent = htmlspecialchars($_POST['createContent']);
+        require('controller/admin/adminViewCtrl.php');
+    }
+    else{
         require('controller/welcomeCtrl.php');
     }
 

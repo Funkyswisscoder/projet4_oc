@@ -12,7 +12,7 @@
     <?php
     $id_post_comment = htmlspecialchars($id_post);
 
-    $retour = "<a href='index.php?redirect='listPosts''>Retour aux articles</a> </p> </div>";
+    $retour = "<a href='index.php?redirect=listPosts'>Retour aux articles</a> </p> </div>";
     echo $retour;
 
         while($datas = $posts->fetch()){
@@ -35,7 +35,6 @@
 
             echo "<h4>" . $pseudo . " le " . $date_com . "</h4>";
             echo "<p>" . $comm . "</p>";
-
         }
     
     ?>

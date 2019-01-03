@@ -3,7 +3,7 @@
 
         public function createPost($postTitle, $postContent){
             $db = $this->dbConnect();
-            $req = $db->prepare('INSERT INTO Posts(title, content) VALUES(:title, :content)');
+            $req = $db->prepare('INSERT INTO Posts(title, content, creation_date) VALUES(:title, :content, NOW())');
             $req->execute(array(
                 'title'     => $postTitle,
                 'content'   => $postContent
@@ -28,6 +28,16 @@
             $db = $this->dbConnect();
             $req = $db->prepare('DELETE FROM Posts WHERE id=?');
             $req->execute(array($id_post));
+        }
+
+        public function updateOnePost($id_post,$postTitle,$postContent){
+            $db = $this->dbConnect();
+            $req = $db->prepare('UPDATE Posts SET title = :title, content = :content WHERE id = :id' );
+            $req->execute(array(
+                'title'     => $postTitle,
+                'content'   => $postContent,
+                'id'        => $id_post
+            ));
         }
 
         private function dbConnect(){
