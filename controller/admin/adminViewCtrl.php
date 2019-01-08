@@ -17,7 +17,7 @@
         $updateOnePost = $postManager->updateOnePost($id_post, $updateTitle, $updateContent);
     }
     if($action === 'create'){
-        require('./view/backoffice/adminCreateFrom.php');
+        require('./view/backoffice/adminCreateForm.php');
     }
     if($action === 'executeCreate'){
         $createPost = $postManager->createPost($createdTitle, $createdContent);

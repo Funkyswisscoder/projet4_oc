@@ -10,10 +10,14 @@
             return $comments;
         }
 
-        public function postComment($id_post, $author, $comment_comment){
+        public function postComment($id_post, $author, $comment_content){
             $db = $this->dbConnect();
-            $comments = $db->prepare('INSERT INTO Posts_Comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-            $commentPosted = $comments->execute(array($id_post, $author, $comment));
+            $comments = $db->prepare('INSERT INTO Posts_Comments(post_id, author, comment_content, comment_date) VALUES(:post_id, :author, :comment_content, NOW())');
+            $commentPosted = $comments->execute(array(
+                'post_id'           => $id_post, 
+                'author'            => $author, 
+                'comment_content'   => $comment_content
+            ));
     
             return $commentPosted;
         }

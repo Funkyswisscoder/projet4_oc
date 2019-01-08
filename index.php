@@ -34,6 +34,11 @@
             default:
                 require('controller/welcomeCtrl.php');
         }
+    }else if(isset($_GET['redirectAdmin']) AND htmlspecialchars($_GET['redirectAdmin'])){
+        $id_post = htmlspecialchars($_GET['redirectAdmin']);
+        require('controller/admin/adminPostViewCtrl.php');
+    }else if(isset($_GET['redirectAdminView']) AND htmlspecialchars($_GET['redirectAdminView'])){
+        require('controller/admin/adminViewCtrl.php');
     }else if(isset($_GET['redirectDelete']) AND htmlspecialchars($_GET['redirectDelete'])){
         $id_post = $_GET['redirectDelete'];
         $action = 'delete';
@@ -52,12 +57,22 @@
         require('controller/admin/adminViewCtrl.php');
     }else if(isset($_GET['redirectCreate']) AND htmlspecialchars($_GET['redirectCreate'])){
         $action = 'create';
-        require('./view/backoffice/adminCreateFrom.php');
+        require('./view/backoffice/adminCreateForm.php');
     }else if(isset($_GET['executeCreate']) AND htmlspecialchars($_GET['executeCreate'])){
         $action = 'executeCreate';
         $createdTitle = htmlspecialchars($_POST['createTitle']);
         $createdContent = htmlspecialchars($_POST['createContent']);
         require('controller/admin/adminViewCtrl.php');
+    }else if(isset($_GET['userComForm']) AND htmlspecialchars($_GET['userComForm'])){
+        $id_post = htmlspecialchars($_GET['id_post']);
+        require('view/frontend/userComForm.php');
+    }else if(isset($_GET['executeCreateCom']) AND htmlspecialchars($_GET['executeCreateCom'])){
+        $action = 'createCom';
+        $id_post = htmlspecialchars($_GET['id_post']);
+        $pseudo = htmlspecialchars($_SESSION['pseudo']);
+        $commentTitle = htmlspecialchars($_POST['titleCom']);
+        $commentContent = htmlspecialchars($_POST['commentContent']);
+        require('controller/postViewCtrl.php');
     }
     else{
         require('controller/welcomeCtrl.php');

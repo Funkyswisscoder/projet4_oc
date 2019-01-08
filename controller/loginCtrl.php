@@ -3,6 +3,8 @@
     $userPwd = htmlspecialchars($_POST['userPwd']);
     $con=mysqli_connect("localhost","root","root","OC_writerblog");
 
+    $_SESSION['pseudo'] = $pseudo;
+
 
     if($con) {
         $password_in_db_hashed = mysqli_query($con, "SELECT password FROM Users where pseudo = '$pseudo'");

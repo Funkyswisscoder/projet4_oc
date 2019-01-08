@@ -8,9 +8,5 @@
 
     $commentManager = new CommentManager();
     $postComments = $commentManager->getComments($id_post);
-
-    if($action == 'createCom'){
-        $createComment = $commentManager->postComment($id_post, $commentTitle, $commentContent);
-    }
     
-    require('./view/frontend/postView.php');
+    require('./view/backoffice/adminPostView.php');
