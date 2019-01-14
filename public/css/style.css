@@ -1,9 +1,62 @@
-html, body{
+html{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+} 
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    background-image: linear-gradient(#455361,#263647);
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+}
+header{
+    display: flex;
+    background-color: #1f3449;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+header h2{
+    margin-left: -20px;
+}
+
+ul{
+    text-decoration: none;
+}
+
+ul li{
+    list-style: none;
+    float: left;
+    margin-right: 10px;
+}
+
+h3{
     margin: 0;
     padding: 0;
 }
-
 .display_none{
     opacity: 0;
 }
+
+.centerPosts{
+    width: 60%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    margin: 10px auto;
+}
+.news{
+    border: 1px solid #fff;
+    width: 70%;
+    height: auto;
+    border-radius: 4px;
+    margin: 10px auto;
+    position: relative;
+    background-color: #1f3449;
+}
+
 

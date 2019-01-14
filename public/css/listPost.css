@@ -1,0 +1,47 @@
+.flexContent{
+    display: flex;
+}
+
+img{
+    height: auto;
+    width: 100%;
+}
+
+ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.imgContainer{
+    position: relative;
+    height: 699px;
+}
+
+.imgContainer div{
+    position: absolute;
+    bottom: 30%;
+    left: 25%;
+    height: auto;
+    text-align: center;
+    background-color: grey;
+    opacity: .7;
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+
+
+.news p{
+    width: 400px;
+    height: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display:block;
+}
+ 
+.news a{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: aqua;
+}

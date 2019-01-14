@@ -1,10 +1,23 @@
 <?php
-    $con=mysqli_connect("localhost","root","root","OC_writerblog");
+    require('./model/listPostsModel.php');
+    require('./model/postViewModel.php');
 
-    if($con) {
-        $allUsers = mysqli_query($con, "SELECT pseudo FROM Users where id != '1'");
-        var_dump($allUsers);
-        require('../view/backoffice/adminPanel.php');
+    ini_set('display_errors', 1);
+
+    /* $postManager = new PostManager();
+    $posts = $postManager->getOnePost($id_post); */
+
+
+    $commentManager = new CommentManager();
+
+    if($action === 'deleteCom'){
+        $deleteSignaledComments = $commentManager->deleteSignaledComment($comment_id);
     }
+
+    $getSignaledComments = $commentManager->getSignaledComments();
+
+
+
+    require('./view/backoffice/adminPanel.php');
 
     

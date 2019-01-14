@@ -1,10 +1,57 @@
 .firstBtns{
     transition: opacity 2s;
+    width: 200px;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 200px;
+    margin:20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #loginForm{
     transition: opacity 2s;
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    height: 300px;
+    width: 200px;
+    border: none;
+    transform: translate(-50%);
+    text-align: center;
 }
-#signUpForm{
+
+#signUpForm {
     transition: opacity 2s;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    height: 300px;
+    width: 250px;
+    border: none;
+    transform: translate(-50%);
+    text-align: center;
 }
+
+.form_container{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width:250px;
+    border: none;
+    transform: translate(-50%);
+}
+
+#formsContainer{
+    width: 50%;
+    height:100%;
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+

@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/postView.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <title>Posts' Comments</title>
 </head>
 <body>
-    <h1>Posts' Comments</h1>
+    <section class='centerPosts'>
+        <h1>Posts' Comments</h1>
 
-    <?php
-    $id_post_comment = htmlspecialchars($id_post);
+        <?php
+        $id_post_comment = htmlspecialchars($id_post);
 
-    $retour = "<a href='index.php?redirect=listPosts'>Retour aux articles</a> </p> </div>";
-    echo $retour;
+        $retour = "<div><a id='backLink' href='index.php?redirect=listPosts'>Retour aux articles</a></div>";
 
-    $addComment = "<a href='index.php?userComForm=userComForm&id_post=". $id_post ."'>Ajouter un commentaire?</a> </p> </div>";
-    echo $addComment;
-
-
-        while($datas = $posts->fetch()){
-            $id_post= $datas['id'];
-            $content = $datas['content'];
-            $content_title = $datas['title'];
-
-            $title = "<div> <h2>" . $content_title . " le " . $datas['datetime_fr'] . "</h2> </div>";
-            $paragraph = "<div class='news'> <p>" . $content. "</p> </div>";
-            echo $title;
-            echo $paragraph;
-        }
-    
-        while($datas = $postComments->fetch()){
-
-            $pseudo = $datas['author'];
-            $comm = $datas['comment_content'];
-            $date_com = $datas['comment_date'];
-            $createCom = "<a href='./index.php?redirect=createCom'>Créer un commentaire</a>";
+        $addComment = "<div><a id='addComment' href='index.php?userComForm=userComForm&id_post=". $id_post ."' id='addComment'>Ajouter un commentaire</a></div>";
+        echo $retour;
 
 
-            echo "<h4>" . $pseudo . " le " . $date_com . "</h4>";
-            echo "<p>" . $comm . "</p>";
-        }
-    
-    ?>
+            while($datas = $posts->fetch()){
+                $id_post= $datas['id'];
+                $content = $datas['content'];
+                $content_title = $datas['title'];
+
+                $title = "<div class='news'> <h2>" . $content_title . " le " . $datas['datetime_fr'] . "</h2> ";
+                $paragraph = "<p>" . $content. "</p> </div>";
+                echo $title;
+                echo $paragraph;
+            }
+        
+            while($datas = $postComments->fetch()){
+
+                $pseudo = $datas['author'];
+                $comm = $datas['comment_content'];
+                $date_com = $datas['comment_date'];
+                $comment_id = $datas['id'];
+
+            
+                echo "<h4>" . $pseudo . " le " . $date_com . "</h4>";
+                echo "<p>" . $comm . "</p>";
+                echo "<a href='index.php?signalComment=signalComment&comment_id=". $comment_id ."&id_post=". $id_post ."' class='signalComment'>Signaler ce commentaire</a>";
+            
+            }
+            
+        echo $addComment;
+        ?>
+    </section>
 </body>
 </html>

@@ -7,12 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Liste des membres:</h2> <br/>
+    <h2>Commentaires signalés:</h2> <br/>
     <?php
-        while($datas = mysqli_fetch_assoc($allUsers)){
-            $userId = $datas['id'];
-            echo "<h3>" . $datas['pseudo'] . "<h/3>";
-            echo "<form action='index.php?action=deleteUser&userId=$userId' method='post'> <input type='submit' value='Supprimer l'utilisateur'> </form>";
+
+    $back = "<a href='index.php?redirectAdminView=redirectAdminView'>Retour aux articles</a>";
+    echo $back;
+    
+        while($datas = $getSignaledComments->fetch()){
+            $pseudo = $datas['author'];
+            $comm = $datas['comment_content'];
+            $date_com = $datas['comment_date'];
+            $comment_id = $datas['id'];
+            $deleteCom = "<a href='./index.php?redirectDeleteCom=".$comment_id."'>Supprimer le commentaire signalé</a>";
+
+
+            echo "<h4>" . $pseudo . " le " . $date_com . "</h4>";
+            echo "<p>" . $comm . "</p>";
+            echo "<p>" . $deleteCom . "</p>";
         }
     ?>
 </body>

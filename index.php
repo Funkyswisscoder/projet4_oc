@@ -73,8 +73,23 @@
         $commentTitle = htmlspecialchars($_POST['titleCom']);
         $commentContent = htmlspecialchars($_POST['commentContent']);
         require('controller/postViewCtrl.php');
-    }
-    else{
+    }else if(isset($_GET['signalComment']) AND htmlspecialchars($_GET['signalComment'])){
+        $action = 'signalCom';
+        $id_post = htmlspecialchars($_GET['id_post']);
+        $comment_id = htmlspecialchars($_GET['comment_id']);
+        require('controller/postViewCtrl.php');
+    }else if(isset($_GET['redirectWarnings']) AND htmlspecialchars($_GET['redirectWarnings'])){
+        $action = 'showMeWarnings';
+        $id_post = htmlspecialchars($_GET['redirectWarnings']);
+        require('controller/admin/adminPanelCtrl.php');
+    }else if(isset($_GET['redirectDeleteCom']) AND htmlspecialchars($_GET['redirectDeleteCom'])){
+        $action = 'deleteCom';
+        $comment_id = htmlspecialchars($_GET['redirectDeleteCom']);
+        require('controller/admin/adminPanelCtrl.php');
+    }else if(isset($_GET['closeSession']) AND htmlspecialchars($_GET['closeSession'])){
+        $action = 'closeSession';
+        require('controller/welcomeCtrl.php');
+    }else{
         require('controller/welcomeCtrl.php');
     }
 

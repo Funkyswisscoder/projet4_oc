@@ -12,8 +12,8 @@
     <?php
     $id_post_comment = htmlspecialchars($id_post);
 
-    $retour = "<a href='index.php?redirectAdminView=adminView'>Retour aux articles</a> </p> </div>";
-    echo $retour;
+    $back= "<a href='index.php?redirectAdminView=redirectAdminView''>Retour aux articles</a> </p> </div>";
+    echo $back;
 
         while($datas = $posts->fetch()){
             $id_post= $datas['id'];

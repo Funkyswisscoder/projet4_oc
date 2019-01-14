@@ -12,7 +12,7 @@
 
         public function getPosts(){
             $db = $this->dbConnect();
-            $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS datetime_fr FROM Posts ORDER BY id DESC ');
+            $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y \') AS datetime_fr FROM Posts ORDER BY id DESC ');
             $req->execute();
             return $req;
         }
