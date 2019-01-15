@@ -38,6 +38,11 @@ h3{
     margin: 0;
     padding: 0;
 }
+
+a{
+    color: aqua;
+    text-decoration: none;
+}
 .display_none{
     opacity: 0;
 }
@@ -47,16 +52,17 @@ h3{
     height: auto;
     text-align: center;
     align-items: center;
-    margin: 10px auto;
+    margin: 20px auto;
 }
 .news{
     border: 1px solid #fff;
     width: 70%;
     height: auto;
     border-radius: 4px;
-    margin: 10px auto;
+    margin: 20px auto;
     position: relative;
     background-color: #1f3449;
+    padding: 30px;
 }
 
 

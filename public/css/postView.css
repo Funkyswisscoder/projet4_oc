@@ -1,5 +1,10 @@
 #backLink{
-    color: aqua;
     position: absolute;
     left: 10%;
+}
+#addComment{
+    position: absolute;
+    color: orange;
+    left: 10%;
+    top: 80%;
 }

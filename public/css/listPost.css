@@ -29,12 +29,11 @@ ul li a{
 }
 
 
-
 .news p{
     width: 400px;
     height: auto;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: hidden; 
     white-space: nowrap;
     display:block;
 }
@@ -43,5 +42,4 @@ ul li a{
     position: absolute;
     bottom: 5px;
     right: 5px;
-    color: aqua;
 }
