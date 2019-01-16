@@ -1,0 +1,11 @@
+.commentAdmin{
+    width: 60%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    margin: 20px auto;
+    border: 1px solid #1f3449;
+    background-color: beige;
+    color: #1f3449;
+    border-radius: 10px;
+}

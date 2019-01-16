@@ -23,9 +23,9 @@
 
 
             while($datas = $posts->fetch()){
-                $id_post= $datas['id'];
-                $content = $datas['content'];
-                $content_title = $datas['title'];
+                $id_post= htmlspecialchars($datas['id']);
+                $content = htmlspecialchars($datas['content']);
+                $content_title = htmlspecialchars($datas['title']);
 
                 $title = "<div class='news'> <h2>" . $content_title . " le " . $datas['datetime_fr'] . "</h2> ";
                 $paragraph = "<p>" . $content. "</p> </div>";
@@ -35,15 +35,15 @@
         
             while($datas = $postComments->fetch()){
 
-                $pseudo = $datas['author'];
-                $comm = $datas['comment_content'];
-                $date_com = $datas['comment_date'];
-                $comment_id = $datas['id'];
+                $pseudo = htmlspecialchars($datas['author']);
+                $comm = htmlspecialchars($datas['comment_content']);
+                $date_com = htmlspecialchars($datas['comment_date']);
+                $comment_id = htmlspecialchars($datas['id']);
 
             
-                echo "<h4>" . $pseudo . " le " . $date_com . "</h4>";
-                echo "<p>" . $comm . "</p>";
-                echo "<a href='index.php?signalComment=signalComment&comment_id=". $comment_id ."&id_post=". $id_post ."' class='signalComment'>Signaler ce commentaire</a>";
+                echo "<div class='commentUser'><h4>" . $pseudo . " le " . $date_com . "</h4>";
+                echo "<p>" . $comm . "</p></div>";
+                echo "<a class='signalBtn' href='index.php?signalComment=signalComment&comment_id=". $comment_id ."&id_post=". $id_post ."' class='signalComment'>Signaler ce commentaire</a>";
             
             }
             

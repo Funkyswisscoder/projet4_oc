@@ -8,3 +8,22 @@
     left: 10%;
     top: 80%;
 }
+.commentUser{
+    width: 60%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    margin: 20px auto;
+    border: 1px solid #1f3449;
+    background-color: beige;
+    color: #1f3449;
+    border-radius: 10px;
+}
+.signalBtn{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #1f3449;
+    color: orange;
+}

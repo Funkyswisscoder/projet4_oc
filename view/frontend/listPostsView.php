@@ -31,9 +31,9 @@
 
             <?php
                 while($datas = $posts->fetch()){
-                    $id_post= $datas['id'];
-                    $content = $datas['content'];
-                    $content_title = $datas['title'];
+                    $id_post= htmlspecialchars($datas['id']);
+                    $content = htmlspecialchars($datas['content']);
+                    $content_title = htmlspecialchars($datas['title']);
         
                     $title = "<h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3>";
                     $paragraph = "<p>" . $content. "<br> <a href='index.php?redirect=".$id_post."'>Lire le chapitre</a> </p>";

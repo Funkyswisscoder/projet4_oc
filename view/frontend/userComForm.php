@@ -1,8 +1,21 @@
 
-<?="<form action='./index.php?executeCreateCom=executeCreateCom&id_post=". $id_post ."' method='POST'>"?>  
-    Titre:</br>
-    <input type='text' name='titleCom'/></br>
-    Contenu du commentaire:</br>
-    <textarea name='commentContent' cols='30' rows='10'></textarea>
-    <input type="submit" name='submit' value="Valider">
-</form> 
+<head>
+    <link rel="stylesheet" href="./public/css/welcomeForm.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+  <script>
+  tinymce.init({
+    selector: '#commentContent'
+  });
+  </script>
+</head>
+<body>
+    <?="<form class='userForm' action='./index.php?executeCreateCom=executeCreateCom&id_post=". $id_post ."' method='POST'>"?>  
+        <h4>Titre:</h4>
+        <input type='text' name='titleCom'/>
+        <h4>Contenu du commentaire:</h4>
+        <textarea id='commentContent' name='commentContent' cols='50' rows='20'></textarea></br>
+        <input type="submit" name='submit' value="Valider" class='submitBtn'>
+    </form> 
+    <script src='./public/js/userForms.js'></script>
+</body>

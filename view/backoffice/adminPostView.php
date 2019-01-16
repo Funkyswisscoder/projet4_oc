@@ -18,26 +18,26 @@
     echo $back;
 
         while($datas = $posts->fetch()){
-            $id_post= $datas['id'];
-            $content = $datas['content'];
-            $content_title = $datas['title'];
+            $id_post= htmlspecialchars($datas['id']);
+            $content = htmlspecialchars($datas['content']);
+            $content_title = htmlspecialchars($datas['title']);
 
-            $title = "<div> <h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3> </div>";
-            $paragraph = "<div class='news'> <p>" . $content. "</p> </div>";
+            $title = "<div class='news'> <h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3>";
+            $paragraph = " <p>" . $content. "</p> </div>";
             echo $title;
             echo $paragraph;
         }
     
         while($datas = $postComments->fetch()){
 
-            $pseudo = $datas['author'];
-            $comm = $datas['comment_content'];
-            $date_com = $datas['comment_date'];
+            $pseudo = htmlspecialchars($datas['author']);
+            $comm = htmlspecialchars($datas['comment_content']);
+            $date_com = htmlspecialchars($datas['comment_date']);
             $createCom = "<a href='./index.php?redirect=createCom'>Créer un commentaire</a>";
 
 
-            echo "<h4>" . $pseudo . " le " . $date_com . "</h4>";
-            echo "<p>" . $comm . "</p>";
+            echo "<div class='commentAdmin'><h4>" . $pseudo . " le " . $date_com . "</h4>";
+            echo "<p>" . $comm . "</p></div>";
         }
     
     ?>

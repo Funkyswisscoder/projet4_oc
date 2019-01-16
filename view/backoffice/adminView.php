@@ -14,7 +14,8 @@
     <?php
         $create = "<a href='./index.php?redirectCreate=redirectCreate'>Créer un nouvel article</a>";
         $warnings = "<a href='./index.php?redirectWarnings=redirectWarnings&post_id=".$id_post."'>Voir les commentaires signalés!</a>";
-
+        $deco = "<a href='./index.php?closeSession=closeSession'>Déconnexion</a>";
+        echo "<div class='deco'>" .$deco."</div>";
         echo "<div class='newPost'>" .$create. "</div><div class='warningPosts'>" .$warnings. "</div>";
     
     ?>
@@ -22,9 +23,9 @@
     <div class='centerPosts'>
         <?php
             while($datas = $posts->fetch()){
-                $id_post= $datas['id'];
-                $content = $datas['content'];
-                $content_title = $datas['title'];
+                $id_post= htmlspecialchars($datas['id']);
+                $content = htmlspecialchars($datas['content']);
+                $content_title = htmlspecialchars($datas['title']);
 
                 $title = "<h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3>";
                 $paragraph = "<p>" . $content. "<br> <a href='index.php?redirectAdmin=".$id_post."'>Commentaires</a></p>";
