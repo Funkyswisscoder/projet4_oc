@@ -30,11 +30,11 @@
 
     <form action="./index.php?redirect=signUpCtrl" method="post" id="signUpForm" class="display_none">
         <h3>Pseudo:</h3> <br/>
-        <input type="text" name="pseudo" value="pseudo" required> <br/>
+        <input type="text" name="pseudo" value="pseudo" pattern="[A-Za-z]{4,}" title="Minimum 4 lettres" required> <br/>
         <h3>Mot de Passe:</h3><br/>
-        <input type="password" name="password" required> <br/>
+        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Minimum 6 lettres, une majuscule et un chiffre" required> <br/>
         <h3>Confirmer Mot de Passe:</h3> <br/>
-        <input type="password" name="passwordCheck" required> <br/>
+        <input type="password" name="passwordCheck" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Minimum 6 lettres, une majuscule et un chiffre" required><br/>
         <h3>Votre adresse e-mail:</h3> <br/>
         <input type="submit" value="Valider">
     </form>

@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="./public/css/style.css">
     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
   <script>
-  tinymce.init({
-    selector: '#commentContent'
-  });
+tinymce.init({ selector:'textarea', forced_root_block : '', force_br_newlines : true, force_p_newlines : false, });
   </script>
 </head>
 <body>

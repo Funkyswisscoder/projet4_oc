@@ -18,9 +18,9 @@
     echo $back;
 
         while($datas = $posts->fetch()){
-            $id_post= htmlspecialchars($datas['id']);
-            $content = htmlspecialchars($datas['content']);
-            $content_title = htmlspecialchars($datas['title']);
+            $id_post= htmlspecialchars_decode(nl2br(html_entity_decode($datas['id'])));
+            $content = htmlspecialchars_decode(nl2br(html_entity_decode($datas['content'])));
+            $content_title = htmlspecialchars_decode(nl2br(html_entity_decode($datas['title'])));
 
             $title = "<div class='news'> <h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3>";
             $paragraph = " <p>" . $content. "</p> </div>";
@@ -30,9 +30,9 @@
     
         while($datas = $postComments->fetch()){
 
-            $pseudo = htmlspecialchars($datas['author']);
-            $comm = htmlspecialchars($datas['comment_content']);
-            $date_com = htmlspecialchars($datas['comment_date']);
+            $pseudo = htmlspecialchars_decode(nl2br(html_entity_decode($datas['author'])));
+            $comm = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_content'])));
+            $date_com = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_date'])));
             $createCom = "<a href='./index.php?redirect=createCom'>Créer un commentaire</a>";
 
 

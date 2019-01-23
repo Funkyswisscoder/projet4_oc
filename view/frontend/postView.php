@@ -23,11 +23,11 @@
 
 
             while($datas = $posts->fetch()){
-                $id_post= htmlspecialchars($datas['id']);
-                $content = htmlspecialchars($datas['content']);
-                $content_title = htmlspecialchars($datas['title']);
+                $id_post= htmlspecialchars_decode(nl2br(html_entity_decode($datas['id'])));
+                $content = htmlspecialchars_decode(nl2br(html_entity_decode($datas['content'])));
+                $content_title = htmlspecialchars_decode(nl2br(html_entity_decode($datas['title'])));
 
-                $title = "<div class='news'> <h2>" . $content_title . " le " . $datas['datetime_fr'] . "</h2> ";
+                $title = "<div class='newsComment'> <h2>" . $content_title . " le " . $datas['datetime_fr'] . "</h2> ";
                 $paragraph = "<p>" . $content. "</p> </div>";
                 echo $title;
                 echo $paragraph;
@@ -35,10 +35,10 @@
         
             while($datas = $postComments->fetch()){
 
-                $pseudo = htmlspecialchars($datas['author']);
-                $comm = htmlspecialchars($datas['comment_content']);
-                $date_com = htmlspecialchars($datas['comment_date']);
-                $comment_id = htmlspecialchars($datas['id']);
+                $pseudo = htmlspecialchars_decode(nl2br(html_entity_decode($datas['author'])));
+                $comm = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_content'])));
+                $date_com = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_date'])));
+                $comment_id = htmlspecialchars_decode(nl2br(html_entity_decode($datas['id'])));
 
             
                 echo "<div class='commentUser'><h4>" . $pseudo . " le " . $date_com . "</h4>";

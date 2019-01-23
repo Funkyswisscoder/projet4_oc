@@ -18,10 +18,10 @@
     <div class='centerPosts'>
         <?php
                 while($datas = $getSignaledComments->fetch()){
-                $pseudo = htmlspecialchars($datas['author']);
-                $comm = htmlspecialchars($datas['comment_content']);
-                $date_com = htmlspecialchars($datas['comment_date']);
-                $comment_id = htmlspecialchars($datas['id']);
+                $pseudo = htmlspecialchars_decode(nl2br(html_entity_decode($datas['author'])));
+                $comm = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_content'])));
+                $date_com = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_date'])));
+                $comment_id = htmlspecialchars_decode(nl2br(html_entity_decode($datas['id'])));
                 $deleteCom = "<a href='./index.php?redirectDeleteCom=".$comment_id."'>Supprimer le commentaire signalé</a>";
 
 

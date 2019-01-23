@@ -1,6 +1,4 @@
-.flexContent{
-    display: flex;
-}
+
 
 img{
     height: auto;
@@ -13,12 +11,12 @@ ul li a{
 }
 .imgContainer{
     position: relative;
-    height: 699px;
+    height: auto;
 }
 
 .imgContainer div{
     position: absolute;
-    bottom: 30%;
+    bottom: 60%;
     left: 25%;
     height: auto;
     text-align: center;
@@ -36,6 +34,7 @@ ul li a{
     overflow: hidden; 
     white-space: nowrap;
     display:block;
+    margin: 0 auto;
 }
  
 .news a{

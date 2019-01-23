@@ -65,4 +65,311 @@ a{
     padding: 30px;
 }
 
+.newsComment{
+    border: 1px solid #fff;
+    width: 70%;
+    height: auto;
+    border-radius: 4px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #1f3449;
+    padding: 30px;
+}
 
+.flexContent{
+    display: flex;
+}
+
+@media screen and (max-width: 600px){
+    h1{
+        text-align: center;
+    }
+    header h2{
+        margin-left: 15px;
+    }
+    .flexContent{
+        display: block;
+    }
+    .news{
+        border: 1px solid #fff;
+        width: 80%;
+        height: auto;
+        border-radius: 4px;
+        margin: 20px auto;
+        position: relative;
+        background-color: #1f3449;
+        padding: 50px;
+        margin-left: -5%;
+        margin-top: 35%;
+    }
+    .newsComment{
+        border: 1px solid #fff;
+        width: 70%;
+        height: auto;
+        border-radius: 4px;
+        margin: 20px auto;
+        position: relative;
+        background-color: #1f3449;
+        padding: 30px;
+        margin-top: 38%;
+    }
+    #addComment {
+        position: absolute;
+        color: orange;
+        left: 10%;
+        top: 16% !important;
+    }
+    .news p {
+        width: 200px !important;
+        margin: 0 auto;
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+    }
+    .imgContainer div {
+        position: absolute;
+        bottom  : 30%;
+        right: 25%;
+        height: auto;
+        text-align: center;
+        background-color: grey;
+        opacity: .7;
+        font-size: 2em;
+        border-radius: 10px;
+    }
+    .imgContainer {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+    .submitBtn {
+        width: 200px;
+        height: 50px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        font-size: 25px;
+        color: orange;
+        background-color: #1f3449;
+        cursor: pointer;
+    }
+    .deco {
+        position: relative !important;
+        left: 56% !important;
+        top: 5%;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #1f3449;
+        width: 100px;
+    }
+    .newPost a {
+        position: relative !important;
+        left: 33%;
+        top: 19%;
+    }
+    .warningPosts a {
+        position: relative !important;
+        left: 22% !important;
+        color: orange;
+        top: 19%;
+        margin-top: 20px;
+    }
+    .commentUser {
+        width: 80% !important;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        margin: 20px auto;
+        border: 1px solid #1f3449;
+        background-color: beige;
+        color: #1f3449;
+        border-radius: 10px;
+        margin-top: 30% !important;
+    }
+    .commentUser p{
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+    }
+}
+@media screen and  (min-width:601px) and (max-width: 900px){
+    h1{
+        text-align: center;
+    }
+    .flexContent{
+        display: block;
+    }
+    .news {
+        border: 1px solid #fff;
+        width: 80%;
+        height: auto;
+        border-radius: 4px;
+        margin: 20px auto;
+        position: relative;
+        background-color: #1f3449;
+        padding: 50px;
+        margin-left: -5%;
+        margin-top: 35%;
+    }
+    .news p {
+        width: 250px !important;
+        margin: 0 auto;
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+    }
+    .newsComment{
+        border: 1px solid #fff;
+        width: 70%;
+        height: auto;
+        border-radius: 4px;
+        margin: 20px auto;
+        position: relative;
+        background-color: #1f3449;
+        padding: 30px;
+        margin-top: 38%;
+    }
+    #addComment {
+        position: absolute;
+        color: orange;
+        left: 10%;
+        top: 16% !important;
+    }
+    .imgContainer div {
+        position: absolute;
+        bottom: 45%;
+        left: 25%;
+        height: auto;
+        text-align: center;
+        background-color: grey;
+        opacity: .7;
+        font-size: 2em;
+        border-radius: 10px;
+    }
+    .imgContainer {
+        position: relative;
+        height: auto;
+    }
+    .deco{
+        position: relative !important;
+        left: 56% !important;
+        top: 5%;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #1f3449;
+        width: 100px;
+    }
+    .newPost a{
+        position: relative !important;
+        left: 33%;
+        top: 19%;
+    }
+    .warningPosts a{
+        position: relative !important;
+        left: 22% !important;
+        color: orange;
+        top: 19%;
+        margin-top: 20px;
+    }  
+    .commentUser {
+        width: 80% !important;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        margin: 20px auto;
+        border: 1px solid #1f3449;
+        background-color: beige;
+        color: #1f3449;
+        border-radius: 10px;
+        margin-top: 30% !important;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1400px){
+    h1{
+        text-align: center;
+    }
+    .flexContent{
+        display: block;
+    }
+    .news{
+        border: 1px solid #fff;
+        width: 90%;
+        height: auto;
+        border-radius: 4px;
+        margin: 20px auto;
+        position: relative;
+        background-color: #1f3449;
+        padding: 50px;
+    }
+    .news p{
+        width: 300px;
+        margin: 0 auto;
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+    }
+    .imgContainer div {
+        position: absolute;
+        bottom: 45%;
+        left: 25%;
+        height: auto;
+        text-align: center;
+        background-color: grey;
+        opacity: .7;
+        font-size: 2em;
+        border-radius: 10px;
+    }
+    .imgContainer {
+        position: relative;
+        height: auto;
+    }
+    .deco {
+        position: relative !important;
+        left: 56% !important;
+        top: 5%;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 5px;
+        background-color: #1f3449;
+        width: 100px;
+    }
+    .newPost a {
+        position: relative !important;
+        left: 33%;
+        top: 19%;
+    }
+    .warningPosts a {
+        position: relative !important;
+        left: 22% !important;
+        color: orange;
+        top: 19%;
+        margin-top: 20px;
+    }
+    .newsComment{
+        border: 1px solid #fff;
+        width: 70%;
+        height: auto;
+        border-radius: 4px;
+        margin: 20px auto;
+        position: relative;
+        background-color: #1f3449;
+        padding: 30px;
+        margin-top: 38%;
+    }
+    #addComment {
+        position: absolute;
+        color: orange;
+        left: 10%;
+        top: 16% !important;
+    }
+}

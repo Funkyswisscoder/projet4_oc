@@ -21,6 +21,8 @@
     }
     if($action === 'executeCreate'){
         $createPost = $postManager->createPost($createdTitle, $createdContent);
+        $action = false;
+        header('location:index.php?redirectAdminView=redirectAdminView');
     }
     $posts = $postManager->getPosts();
 
