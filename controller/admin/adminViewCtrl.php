@@ -1,7 +1,10 @@
 <?php
 
     require('model/listPostsModel.php');
+    require('model/postViewModel.php');
+
     $postManager = new PostManager();
+    $commentManager = new CommentManager();
 
 
 

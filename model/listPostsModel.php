@@ -1,4 +1,5 @@
 <?php
+
     class PostManager{
 
         public function createPost($postTitle, $postContent){
@@ -25,9 +26,12 @@
         }
 
         public function deleteOnePost($id_post){
+            $comManager = new CommentManager();
+            $comManager->deleteCommentsForPost($id_post);
             $db = $this->dbConnect();
             $req = $db->prepare('DELETE FROM Posts WHERE id=?');
             $req->execute(array($id_post));
+
         }
 
         public function updateOnePost($id_post,$postTitle,$postContent){
@@ -45,3 +49,4 @@
             return $db;
         }
     }
+

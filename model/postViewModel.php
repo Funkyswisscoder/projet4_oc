@@ -1,4 +1,5 @@
 <?php
+    ini_set('display_errors', 1);
 
     class CommentManager{
 
@@ -32,7 +33,7 @@
         public function deleteComment($comment_id){
             $db = $this->dbConnect();
             $req = $db->prepare('DELETE FROM Posts_Comments WHERE id=?');
-            $req->execute(array($commment_id));
+            $req->execute(array($comment_id));
 
             return $req;
         }
@@ -55,6 +56,11 @@
             return $req;
         }
 
+        public function deleteCommentsForPost($post_id){
+            $db = $this->dbConnect();
+            $req = $db->prepare('DELETE FROM Posts_Comments WHERE id_post=?');
+            $req->execute(array($post_id));
+        }
 
 
         private function dbConnect(){

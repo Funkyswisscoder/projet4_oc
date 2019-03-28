@@ -34,6 +34,8 @@
                     $id_post= htmlspecialchars_decode(nl2br(html_entity_decode($datas['id'])));
                     $content = htmlspecialchars_decode(nl2br(html_entity_decode($datas['content'])));
                     $content_title = htmlspecialchars_decode(nl2br(html_entity_decode($datas['title'])));
+
+
         
                     $title = "<h3>" . $content_title . " le " . $datas['datetime_fr'] . "</h3>";
                     $paragraph = "<p>" . $content. "<br> <a href='index.php?redirect=".$id_post."'>Lire le chapitre</a> </p>";

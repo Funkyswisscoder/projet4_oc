@@ -1,13 +1,12 @@
 <?php
 
     class User{
-        public function signUp($pseudo,$email,$password){
+        public function signUp($pseudo, $password){
             $db = $this->dbConnect();
-            $req = $db->prepare('INSERT INTO Users(pseudo, email, password) 
-            VALUES(:pseudo, :email, :password)');
+            $req = $db->prepare('INSERT INTO Users(pseudo, password) 
+            VALUES(:pseudo, :password)');
             $req->execute(array(
                 'pseudo' => $pseudo,
-                'email' => $email,
                 'password' => $password
             ));
         }

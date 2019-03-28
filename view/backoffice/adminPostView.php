@@ -30,9 +30,9 @@
     
         while($datas = $postComments->fetch()){
 
-            $pseudo = htmlspecialchars_decode(nl2br(html_entity_decode($datas['author'])));
-            $comm = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_content'])));
-            $date_com = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_date'])));
+            $pseudo = $datas['author'];
+            $comm = $datas['comment_content'];
+            $date_com = $datas['comment_date'];
             $createCom = "<a href='./index.php?redirect=createCom'>Créer un commentaire</a>";
 
 

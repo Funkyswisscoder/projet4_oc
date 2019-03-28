@@ -11,13 +11,17 @@
     $commentManager = new CommentManager();
     
     if($action == 'createCom'){
-        $createComment = $commentManager->postComment($id_post, $commentTitle, $commentContent);
+        if(strlen($commentContent) > 0){
+            $createComment = $commentManager->postComment($id_post, $commentTitle, $commentContent);            
+        }
+        else{
+            echo "<h1>Comment's Content is too short</h1>";
+        }
     }
     
     if($action == 'signalCom'){
         $signals = 'YES';
         $updateComment = $commentManager->updateComment($comment_id, $signals);
-        var_dump($updateComment);
     } 
 
     $postComments = $commentManager->getComments($id_post);

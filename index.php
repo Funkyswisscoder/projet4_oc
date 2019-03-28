@@ -1,27 +1,37 @@
 <?php
-
-
+    ini_set('display_errors', 1);
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
-    }else{
-        require('view/frontend/listPostsView.php');
     }
 
     if(isset($_GET['redirect'])){
         $id_post = -1;
         $id_post = htmlspecialchars($_GET['redirect']);   
     }
+    
 
     $action = false;
-
+    //Public
     if(isset($_GET['redirect']) AND htmlspecialchars($_GET['redirect'])){
         switch($_GET['redirect']){
             case "loginCtrl";
-                require('controller/loginCtrl.php');
+            require('controller/loginCtrl.php');
+            return;
+        break;
+        case "signUpCtrl";
+            require('controller/signUpCtrl.php');
+            return;
             break;
-            case "signUpCtrl";
-                require('controller/signUpCtrl.php');
-            break;
+        default: break;
+        }
+    }
+    //Private guard
+    if(!isset($_SESSION['connexion']) || !$_SESSION['connexion']){
+        require('./view/frontend/welcome.php');
+        return;
+    }
+    if(isset($_GET['redirect']) AND htmlspecialchars($_GET['redirect'])){
+        switch($_GET['redirect']){
             case "listPosts";
                 require('controller/listPostsCtrl.php');
             break;
@@ -88,25 +98,9 @@
         require('controller/admin/adminPanelCtrl.php');
     }else if(isset($_GET['closeSession']) AND htmlspecialchars($_GET['closeSession'])){
         $action = 'closeSession';
+        $_SESSION['connexion'] = false;
         require('controller/welcomeCtrl.php');
     }else{
         require('controller/welcomeCtrl.php');
     }
 
-/*
-    if(isset($_GET['redirect'])){
-        if($_GET['redirect'] == 'loginCtrl'){
-            require('controller/loginCtrl.php');
-        }else if($_GET['redirect'] == 'signUpCtrl'){
-            require('controller/signUpCtrl.php');
-        }else if($_GET['redirect'] == 'adminView'){
-            require('admin/adminViewCtrl.php');
-        }else if($_GET['redirect'] == 'listPosts'){
-            require('controller/listPostsCtrl.php');
-        }else if($_GET['redirect'] == $id_post){
-            require('controller/postViewCtrl.php');
-        }
-    }else{
-        require('controller/welcomeCtrl.php');
-    }
-    */

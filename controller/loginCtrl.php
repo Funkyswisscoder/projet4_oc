@@ -1,27 +1,35 @@
 <?php
+    ini_set('display_errors', 1);
+    require('./model/LoginSignUpModel.php');
+
+
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $userPwd = htmlspecialchars($_POST['userPwd']);
-    $con=mysqli_connect("localhost","root","root","OC_writerblog");
+
 
     $_SESSION['pseudo'] = $pseudo;
 
 
-    if($con) {
-        $password_in_db_hashed = mysqli_query($con, "SELECT password FROM Users where pseudo = '$pseudo'");
-        while($datas = mysqli_fetch_assoc($password_in_db_hashed)){
-            if($pseudo == 'admin'){
-                if(password_verify($userPwd,$datas['password'])){
-                    require('./controller/admin/adminViewCtrl.php'); 
-                }else{
-                    echo "<h1>You aren't my admin! </h1>";
-                }
+    $connectionManager = new ConnectionManager();
+
+    $password_in_db_hashed = $connectionManager->checkLogin($pseudo);
+  
+    while($datas = $password_in_db_hashed->fetch()){
+        if($pseudo == 'admin'){
+            if(password_verify($userPwd,$datas['password'])){
+                $_SESSION['connexion'] = true;
+                require('./controller/admin/adminViewCtrl.php'); 
             }else{
-                if(password_verify($userPwd,$datas['password'])){
-                    require('./controller/listPostsCtrl.php');
-                } else{
-                    echo "<h1> Wrong Username or Password</h1>";
-                }
+                echo "<h1>You aren't my admin! </h1>";
+            }
+        }else{
+            if(password_verify($userPwd,$datas['password'])){
+                $_SESSION['connexion'] = true;
+                require('./controller/listPostsCtrl.php');
+            } else{
+                echo "<h1> Wrong Username or Password</h1>";
             }
         }
     }
+
 

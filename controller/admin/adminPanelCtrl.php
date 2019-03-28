@@ -4,14 +4,12 @@
 
     ini_set('display_errors', 1);
 
-    /* $postManager = new PostManager();
-    $posts = $postManager->getOnePost($id_post); */
 
 
     $commentManager = new CommentManager();
 
     if($action === 'deleteCom'){
-        $deleteSignaledComments = $commentManager->deleteSignaledComment($comment_id);
+        $deleteSignaledComments = $commentManager->deleteComment($comment_id);
     }
 
     $getSignaledComments = $commentManager->getSignaledComments();

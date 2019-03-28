@@ -12,8 +12,9 @@
 <body>
     <h1>Admin View</h1>
     <?php
+
         $create = "<a href='./index.php?redirectCreate=redirectCreate'>Créer un nouvel article</a>";
-        $warnings = "<a href='./index.php?redirectWarnings=redirectWarnings&post_id=".$id_post."'>Voir les commentaires signalés!</a>";
+        $warnings = "<a href='./index.php?redirectWarnings=redirectWarnings'>Voir les commentaires signalés!</a>";
         $deco = "<a href='./index.php?closeSession=closeSession'>Déconnexion</a>";
         echo "<div class='deco'>" .$deco."</div>";
         echo "<div class='newPost'>" .$create. "</div><div class='warningPosts'>" .$warnings. "</div>";

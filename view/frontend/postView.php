@@ -35,10 +35,10 @@
         
             while($datas = $postComments->fetch()){
 
-                $pseudo = htmlspecialchars_decode(nl2br(html_entity_decode($datas['author'])));
-                $comm = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_content'])));
-                $date_com = htmlspecialchars_decode(nl2br(html_entity_decode($datas['comment_date'])));
-                $comment_id = htmlspecialchars_decode(nl2br(html_entity_decode($datas['id'])));
+                $pseudo = $datas['author'];
+                $comm =$datas['comment_content'];
+                $date_com = $datas['comment_date'];
+                $comment_id = $datas['id'];
 
             
                 echo "<div class='commentUser'><h4>" . $pseudo . " le " . $date_com . "</h4>";

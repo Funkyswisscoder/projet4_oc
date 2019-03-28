@@ -35,7 +35,6 @@
         <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Minimum 6 lettres, une majuscule et un chiffre" required> <br/>
         <h3>Confirmer Mot de Passe:</h3> <br/>
         <input type="password" name="passwordCheck" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Minimum 6 lettres, une majuscule et un chiffre" required><br/>
-        <h3>Votre adresse e-mail:</h3> <br/>
         <input type="submit" value="Valider">
     </form>
     <script type="text/javascript" src="./public/js/welcome.js"></script>
